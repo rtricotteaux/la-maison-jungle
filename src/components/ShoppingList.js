@@ -20,7 +20,7 @@ function ShoppingList({cart, updateCart}) {
 				{ name, price, amount: currentPlantSaved.amount + 1 }
 			])
 		} else {
-			updateCart([...cart, { name, price, amount: 1 }])
+			updateCart([...cart, {name, price, amount: 1}])
 		}
 	}
 		
@@ -32,13 +32,14 @@ function ShoppingList({cart, updateCart}) {
 				))}
 			</ul>
 			<ul className='lmj-plant-list'>
-				{plantList.map(({id, cover, name, water, light}) => (
+				{plantList.map(({id, cover, name, water, light, price}) => (
 					<div key={id}>
 						<PlantItem
 							cover={cover}
 							name={name}
 							water={water}
 							light={light}
+							price={price}
 						/>
 						<button onClick={() => addToCart(name, price)}>Ajouter</button>	
 					</div>
